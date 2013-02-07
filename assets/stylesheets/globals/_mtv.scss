@@ -1,0 +1,93 @@
+// Default Moovweb TV Styles
+
+// Fonts
+$font_family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+$font_size: 24px;
+
+// Color scheme
+$color1: #070707; // black
+$color2: #091213; // lighter black
+$color3: #0C0C0C; // lighter black
+$color4: #252525; // lighter black
+$color5: #16bedc; // blue
+$color6: #1CC2EC; // lighter blue
+
+// Gradients
+$grad1: linear-gradient(top, $color4, $color3);
+$grad2: linear-gradient(top, $color5, $color2);
+
+// Box shadows
+$box_shadow1: inset 0 0 3px 4px $color1;
+$box_shadow2: 0 0 8px 3px $color6;
+
+// Margin & Padding
+$spacing: 10px;
+
+// Set when finished
+body {
+  // overflow: hidden;
+}
+
+// Default zone styles
+.mtv-zone {
+  width: 960px;
+  display: inline-block;
+  overflow: hidden;
+  padding: $spacing;
+  .mtv-items-div {
+    overflow: hidden;
+    width: auto;
+    .mtv-div {
+      float: left;
+      overflow: hidden;
+      margin: $spacing 0;
+      padding: 5px;
+    }
+    .mtv-item {
+      @include background($grad1);
+      border-radius: 30px 30px / 30px 30px;
+      padding: $spacing;
+      margin: 5px;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-family: $font_family;
+      font-size: $font_size;
+      line-height: 52px;
+    }
+    .mtv-hover {
+      @include box-shadow($box_shadow2, $box_shadow1);
+    }
+  }
+  .mtv-active {
+    @include box-shadow($box_shadow1);
+    background: none;
+    @include background($grad2);
+  }
+  // sidebar zone
+  &.mtv-sidebar {
+    width: 220px;
+    background: $color4;
+    height: auto;
+    float: left;
+    .mtv-items-div {
+      .mtv-div {
+        float: none;
+      }
+    }
+  }
+  // grid zone
+  &.mtv-grid {
+    width: 740px;
+    background: $color1;
+    .mtv-div {
+      margin: $spacing;
+    }
+    .mtv-item {
+      padding: $spacing;
+      width: 300px;
+      height: 300px;
+      line-height: 24px;
+    }
+  }
+}

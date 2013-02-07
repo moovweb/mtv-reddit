@@ -1,0 +1,19 @@
+// Reset file for standardizing the page
+// @import "globals/_reset";
+
+// Base file contains all the global styles
+@import "globals/_base";
+
+// Header & Footer
+@import "sections/_header";
+@import "sections/_footer";
+
+// Pages
+@import "pages/_home";
+
+// MTV Styles
+// @import "globals/_mtv.scss";
+
+.mtv-hover {
+  @include box-shadow(0 0 8px 3px #1CC2EC, inset 0 0 3px 4px #070707);
+}
